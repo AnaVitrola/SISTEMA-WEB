@@ -1,0 +1,10 @@
+<html>
+    <body>
+        <?php 
+        $x = $_POST["largura"];
+        $y = $_POST["comprimento"];
+        $area = $x*$y;
+        echo "Sua largura e: $x e seu comprimento e: $y, entao sua area e de: $area";
+        ?>
+    </body>
+</html>
