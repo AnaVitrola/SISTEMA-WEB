@@ -1,0 +1,11 @@
+<html>
+    <body>
+        <form method="post" action="media.php">
+        Digite nota 1:<input type="text" name="nota1"><br>
+        Digite nota 2:<input type="text" name="nota2"><br>
+        Digite nota 3:<input type="text" name="nota3"><br>
+        <input type="submit" value="calcular">
+        </form>
+    </body>
+</html>
+
