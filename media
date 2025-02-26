@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <?php 
+        $x = $_POST["nota1"];
+        $y = $_POST["nota2"];
+        $a = $_POST["nota3"];
+        $soma = ($x + $y + $a);
+        $media = $soma/3;
+        if($media>=6)
+            $situacao = "aprovado";
+
+        if($media<6)
+            $situacao = "reprovado";
+
+        echo "Sua media e: $media e sua situacao e: $situacao";
+        ?>
+    </body>
+</html>
