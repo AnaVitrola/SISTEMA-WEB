@@ -1,0 +1,9 @@
+<html>
+    <body>
+        <form method="post" action="area2.php">
+        Informe a largura: <input type="text" name="largura"><br>
+        Informe a comprimento: <input type="text" name="comprimento"><br>
+        <input type="submit" value="calcular">
+        </form>
+    </body>
+</html>
