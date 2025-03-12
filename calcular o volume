@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <form method="post" action="calcular1.php">
+        Informe o comprimento da caixa: <input type="text" name="comprimento"><br>
+        Informe a largura da caixa:<input type="text" name="largura"><br>
+        Informe a altura da caixa:<input type="text" name="altura"><br>
+        <input type="submit" value="calcular">
+        </form>
+    </body>
+</html>
+
+<html>
+    <body>
+        <?php 
+        $x = $_POST["comprimento"];
+        $y = $_POST["largura"];
+        $a = $_POST["altura"];
+        $volume = $x*$y*$a;
+        echo "Seu comprimento:$x, sua largura:$y e sua altura:$a, seu volume e:$volume";
+        ?>
+    </body>
+</html>
