@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <form method="post" action="maior2.php">
+        Digite valor 1:<input type="text" name="num1"><br>
+        Digite valor 2:<input type="text" name="num2"><br>
+        Digite valor 3:<input type="text" name="num3"><br>
+        <input type="submit" value="calcular">
+        </form>
+    </body>
+</html>
+
+<html>
+    <body>
+        <?php 
+        $x = $_POST["num1"];
+        $y = $_POST["num2"];
+        $a = $_POST["num3"];
+        if ($x > $y && $x > $a)
+            {echo "$x e maior";
+            }
+            elseif ($y > $x && $y > $a)
+            {echo "$y e maior";
+            }
+            else
+            {echo"$a e maior";
+            }
+        ?>
+    </body>
+</html>
