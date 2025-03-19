@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <form method="post" action="tabuada2.php">
+        Informe um numero de 1 a 10:<input type="text" name="numero"><br>
+        <input type="submit" value="calcular">
+        </form>
+    </body>
+</html>
+
+<html>
+    <body>
+        <?php 
+            $x = $_POST["numero"];
+            $i=0;
+            $r=0;
+            for ($i=0;$i<=10;$i++) 
+            {
+                $r = $x * $i;
+                echo "$x X $i = $r<br>" ;
+            }
+        ?>
+    </body>
+</html>
