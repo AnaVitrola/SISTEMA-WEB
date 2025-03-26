@@ -1,0 +1,34 @@
+<html>
+    <body>
+        <?php
+        $contador = 0;
+        $j2 = 0;
+        $x = $_POST["numero"];
+        $numerosTexto = '';
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (isset($_POST['numero']) && is_numeric($_POST['numero'])) {
+                $x = (float)$_POST['numero'];
+                if ($j2 == $x){
+                    echo "Voce acertou o número";
+                }
+                elif ($j2 < $x){
+                    echo "seu numero é menor que o numero sorteado";
+                }
+                else {
+                    echo "seu numero é maior que o numero sorteado";
+                }
+                $numerosTexto = isset($_POST['numerosTexto']) ? $_POST['numerosTexto'] : '';
+        ?>
+        <form method="post">
+        <label for="numero">Adivinhe o número!:</label>
+        <input type="number" step="any" name="numero" id="numero" required>
+        <input type="hidden" name="soma" value="<?php echo $soma; ?>">
+        <input type="hidden" name="contador" value="<?php echo $contador; ?>">
+        <input type="hidden" name="numerosTexto" value="<?php echo htmlspecialchars($numerosTexto); ?>">
+
+
+
+        <button type="submit">Adicionar</button>
+    </form>
+    </body>
+</html>
