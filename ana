@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <TITLE>Incluir</TITLE>
+</HEAD>
+<BODY>
+<font face="book antiqua" size="8"><center>Inclusão</center></font><br>
+
+<form method="post" action="incluir.php">
+Id:      	    <input type="text" size="07" name="id" maxlength="07"><br><br>
+Titulo:		    <input type="text" size="40" name="titulo"><BR><br>
+Artista:		<input type="text" size="20" name="artista"><BR><br>
+Album:			<input type="text" size="20" name="album"><BR><br>
+Genero:			<input type="text" size="04" name="genero"><BR><br>
+Ano_Lancamento:	<input type="text" size="30" name="lancamento"><BR><br>
+Duracao:		<input type="text" size="14" name="duracao"><BR><br>
+Compositor:		<input type="text" size="04" name="compositor"><BR><br>
+Letra:			<input type="text" size="30" name="letra"><BR><br>
+				<input type="submit" value="Incluir">
+</form>
+</BODY>
+</HTML>
+ 
+
+
+<HTML>
+<HEAD>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <TITLE>Incluir</TITLE>
+</HEAD>
+<BODY>
+<?php
+$Id=			      $_POST["id"];
+$Titulo=		      $_POST["titulo"];
+$Artista= 	      $_POST["artista"];
+$Album=			   $_POST["album"];
+$Genero=			   $_POST["genero"];
+$Ano_Lancamento=  $_POST["lancamento"];
+$Duracao=			$_POST["duracao"];
+$Compositor=		$_POST["compositor"];
+$Letra=			   $_POST["letra"];
+$con=mysqli_connect("localhost","root","","detran") or die ("erro!"); //faz a conexão com o banco de dados detran
+
+$in = "insert into musicas values ('$Id',
+									         '$Titulo',
+									         '$Artista',
+									         '$Album',
+									         '$Genero',
+									         '$Ano_Lancamento', 
+									         '$Duracao', 
+									         '$Compositor';
+									         '$Letra)";
+$incluir=mysqli_query($con,$in);
+if ($incluir==1)
+{
+   echo "
+   Id:		      $Id<BR>
+   Titulo:		   $Titulo<BR>
+   Album:		   $Album<BR>
+   Genero:			$Genero<BR>
+   Ano_Lancamento:$Ano_Lancamento<BR>
+   Duracao:       $Duracao<BR>
+   Compositor:		$Compositor<BR>
+   Letra: 	      $Letra<hr>";
+   
+   echo "Registro incluído com sucesso!<BR>";
+}
+else
+{
+   echo "Registro NÃO incluído!<BR>";
+}
+echo "<a href='incluir.html'>Voltar</a><BR>";
+?>
+</BODY>
+</HTML>
+
